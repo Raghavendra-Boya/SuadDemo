@@ -9,7 +9,7 @@ Why we form:
 3. sisn in or sign up from to collect and to access the appplication
 
 Synatrx:
-<form>\
+<form>
         input
 </form>
 */

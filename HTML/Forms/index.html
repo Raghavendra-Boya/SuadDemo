@@ -1,53 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
+  <meta charset="UTF-8" />
+  <title>All Form Types (No CSS, only <br>)</title>
 </head>
 <body>
+  <h1>All Form Types Demo</h1>
 
-    <form action="#" method="get" autocomplete="off">
-        <legend>
-            
-        </legend>
-        <!-- <label for="userName">Name:</label> -->
-      <input type="text" id="userName" name="Userame" placeholder="Enter your Name" > <br><br>
-      <label for="email">EMail:</label> 
-      <input type="email" id="email" name="Email" required><br><br>
-      <label for="Password">Password:</label>
-      <input type="password" id="Password" name="password"><br><br>
-      <input type="number" name="Phone Number" placeholder="Enter Number">
-      <label for="">Courses:</label>
-      <input type="checkbox" id="html" name="Course" value="html">
-      <label for="html" >HTML</label>
-        <input type="checkbox" id="css" name="Course" value="css">
-      <label for="css" >CSS</label>
-        <input type="checkbox" id="js" name="Course" value="js">
-      <label for="js" >JS</label>
-      <label for="">Grnder:</label>
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label>
+  <form action="#" method="post" enctype="multipart/form-data">
 
-      <select name="country" id="country">
-        <option value="">---Select---</option>
-        <option value="india">India</option>
-        <option value="uk">UK</option>
-        <option value="us">US</option>
-      </select>
+    <!-- Text-like inputs -->
+    <label>Text:
+      <input type="text" name="text_example" placeholder="Your name" required>
+    </label><br><br>
 
-      <input type="date" name="DOB">
-      <input type="file">
-      <input type="color" >
-      <input type="range">
-      <textarea name="" id=""></textarea>
-      <input type="search">
-      <input type="tel" maxlength="10" minlength="10">
-      <button>submit</button>
-       <!-- <input type="button" value="submit"> -->
-    </form>
+    <label>Password:
+      <input type="password" name="password_example" placeholder="Secret" required>
+    </label><br><br>
+
+    <label>Email:
+      <input type="email" name="email_example" placeholder="you@example.com" required>
+    </label><br><br>
+
+    <label>URL:
+      <input type="url" name="url_example" placeholder="https://example.com">
+    </label><br><br>
+
+    <label>Telephone:
+      <input type="tel" name="tel_example" placeholder="+91 98765 43210" pattern="[\+0-9\s\-]{7,}">
+    </label><br><br>
+
+    <label>Search:
+      <input type="search" name="search_example" placeholder="Search term">
+    </label><br><br>
+
+    <!-- Numeric/date/time inputs -->
+    <label>Number:
+      <input type="number" name="number_example" min="0" max="100" step="5">
+    </label><br><br>
+
+    <label>Range:
+      <input type="range" name="range_example">
+      
+    </label><br><br>
+
+    <label>Date:
+      <input type="date" name="date_example">
+    </label>
+
+    <label>Time:
+      <input type="time" name="time_example">
+    </label>
+
+    <label>Week:
+      <input type="week" name="week_example">
+    </label>
+
+    <label>Month:
+      <input type="month" name="month_example">
+    </label><br><br>
+
     
+
+    <!-- File, color, hidden, image submit -->
+    <label>File:
+      <input type="file" name="file_example" multiple>
+    </label><br><br>
+
+    <label>Color:
+      <input type="color" name="color_example" value="#0ea5e9">
+    </label><br><br>
+
+    <input type="hidden" name="hidden_example" value="secret_payload"><br>
+
+   
+
+    <!-- Choice controls -->
+    <label><input type="checkbox" name="agree_terms" required> I agree to the terms</label><br>
+
+    <label><input type="checkbox" name="newsletter" checked> Subscribe to newsletter</label><br><br>
+
+    Gender:<br>
+    <label><input type="radio" name="gender" value="male"> Male</label><br>
+    <label><input type="radio" name="gender" value="female"> Female</label><br>
+    <label><input type="radio" name="gender" value="other" checked> Other</label><br><br>
+
+    <!-- Selects, textarea, datalist -->
+    <label>Country (single select):
+      <select name="country">
+        <option value="">-- choose --</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+      </select>
+    </label><br><br>
+
+    
+
+    
+
+    <label>Message:
+      <textarea name="message" rows="4" cols="40" placeholder="Write something..."></textarea>
+    </label><br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit Form">
+    <input type="reset" value="Reset Form">
+    
+
+    
+
+  </form>
+
+  
 </body>
 </html>
