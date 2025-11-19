@@ -1,4 +1,4 @@
- a {
+ /* a {
             font-size: larger;
             font-weight: bold;
             color: rgb(213, 19, 19);
@@ -18,9 +18,96 @@
             align-items: center;
             justify-content: space-between;
         }
-        div{
-            width: 30%;
-        }
+      
         nav{
             width: 50%;
         }
+
+        *{
+        margin: 0px;
+        font-style: italic;
+        padding: 0px;
+       }
+
+       .anchor{
+        color:yellow;
+       }
+       .item1{
+        color: aqua;
+       } */
+
+       h2{
+        color: blue;
+        text-decoration: underline;
+        margin-bottom: 26px;
+       }
+       h3,.note,.demo{
+        color: aqua;
+        margin: 6px 0px;
+       }
+
+       .card{
+        width: 260px;
+        background-color: rgb(93, 96, 96);
+        
+       }
+       .row{
+        display: flex;
+        gap: 12px;
+       }
+       .btn{
+        background-color: rgb(40, 40, 234);
+        border-radius: 6px;
+        padding: 5px;
+        text-decoration: none;
+        color: white;
+       }
+       .btn:hover{
+        color: rgb(40, 40, 234);
+        background-color: white;
+       } 
+       /* .btn:active{
+        transform: translateY(10px) scale(1.2);
+       }*/
+
+       .example-link:link{
+        color: red;
+       }
+       .example-link:visited{
+        color: green;
+       }
+
+       .example-list li:first-child{
+        font-weight: 700;
+       }
+       .example-list li:last-child{
+       color: orangered;
+       }
+       .alter li:nth-child(3){
+        background-color: aqua;
+       }
+
+       .quote::before{
+        content: "--->Before";
+       }
+       .quote::after{
+        content: "--->after";
+       }
+
+       .para::first-line{
+        color: red;
+        font-size: 30px;
+        font-weight: bolder;
+        text-align: justify;
+       }
+
+       .card>h4{
+        color: green;
+       }
+       .card1 h4{
+        color: green;
+       }
+
+       h4+p{
+        background-color: crimson;
+       }

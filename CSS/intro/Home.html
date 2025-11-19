@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internal CSS</title>
-    <link rel="" href="./intro.css">
+    <link rel="stylesheet" href="./intro.css">
     <style>
-       a{
-        color: white;
-       }
+
+
     </style>
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div>
             <img src="https://www.achieversit.com/assets/images/AIT-white.jpg" alt="Header_Logo">
         </div>
@@ -26,9 +25,120 @@
                 <li><a href="./Contact.html" style="color: green;">Contact</a></li>
             </ol>
         </nav>
-    </header>
+    </header> -->
 
-   
+
+
+    <div>
+        <h2>5. Group Selector(comma)</h2>
+        <div>
+            <p class="note">Group Sectors applies the same style to multiple sectors at once</p>
+            <h3>Heading Selected by h3 <code>h3,.note,span.demo</code></h3>
+            <div class="card">
+                <p><span class="demo">Label</span> - This is paragraph inside a card class</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>6. Pseudo CLass Selector(:)</h2>
+        <div class="demo1 row">
+            <div class="card">
+                <h4>Hover & Active</h4>
+                <p>Buttons show :hover and :active states</p>
+                <a href="#" class="btn">Hover me</a>
+                <a href="#" class="btn">click Me</a>
+            </div>
+            <div class="card">
+                <h4>Links(:visisted & :link)</h4>
+                <p>Open these to see color chnage for visted links</p>
+                <p><a href="https://www.geeksforgeeks.org/css/tailwind-css/" target="_blank"
+                        class="example-link">Link</a></p>
+
+            </div>
+            <div class="card">
+                <h4>List</h4>
+                <ol class="example-list">
+                    <li>First Item ---Shouls be bold(first-child)</li>
+                    <li>Middle Item</li>
+                    <li>Last Item - color: Orangged----(last Child)</li>
+                    <li>Middle Item</li>
+                </ol>
+
+
+                <ul class="alter">
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                    <li>Item4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>7. Pseudio Element Selector(::)</h2>
+        <div>
+            <div class="card">
+                <h4>::before & ::after</h4>
+                <p class="quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, saepe.</p>
+
+            </div>
+
+            <div class="card">
+                <h4>first-letter & first-line</h4>
+                <p class="para"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur harum ab ad eos
+                    officiis quia nesciunt perferendis, similique iure quae exercitationem nulla quibusdam eius eum
+                    error dicta beatae! Expedita, ducimus ab corrupti, iusto consequatur vel necessitatibus quibusdam
+                    quos non laudantium eius aperiam eveniet est incidunt, quam deserunt nulla quod voluptatum?</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>8. Combinationa Selectors</h2>
+        <div>
+            <div class="card">
+                <h4>Direct Child Selector(>)</h4>
+                <p>only the h4<code>h4</code> that is a direct child of <code>.card</code> above gets the green color.
+                    if you wrap the <code>h4</code> deeper inside the onether element it won't match</p>
+                <div>
+                    <h4>not direct child of <code>.card</code></h4>
+                </div>
+                <span>
+                    <h4>I am h4</h4>
+                </span>
+            </div>
+
+            <div class="card1">
+                <h4>in-Direct Child Selector(space)</h4>
+                <p>only the h4<code>h4</code> that is a direct child of <code>.card</code> above gets the green color.
+                    if you wrap the <code>h4</code> deeper inside the onether element it won't match</p>
+                <div>
+                    <h4>not direct child of <code>.card</code></h4>
+                </div>
+                <h4>I am h4</h4>
+            </div>
+        </div>
+    </div>
+
+    <div>
+       
+
+        <div class="card1">
+                 <h4>sibling Selctors(general sibling(~) & adj sibling(+))</h4>
+                <p>only the h4<code>h4</code> that is a direct child of <code>.card</code> above gets the green color.
+                    if you wrap the <code>h4</code> deeper inside the onether element it won't match</p>
+                <div>
+                    <h4>not direct child of <code>.card</code></h4>
+                </div>
+                <!-- <h4>I am h4</h4> -->
+                 <p>I am para</p>
+            </div>
+    </div>
+
+
+    attribute selector([])
 </body>
 
 </html>
