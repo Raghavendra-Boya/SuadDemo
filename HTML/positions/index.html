@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+    What is Positions:
+    The <position> property in CSS is used to specify the positioning method for an element. It determines how an element is positioned in the document flow and how it interacts with other elements on the page.
+
+        why positions:
+        1. To control the layout of elements on a webpage.
+        2. To create complex designs and layouts.
+        3. To create overlapping elements.
+        4. To create fixed headers or footers.
+
+    Types of Positioning:
+    1. Static Positioning (default):
+        - Elements are positioned according to the normal document flow.
+        - They are not affected by top, bottom, left, or right properties.
+    2. Relative Positioning:
+        - Elements are positioned relative to their normal position.
+        - The top, bottom, left, and right properties can be used to adjust the position.
+    3. Absolute Positioning:
+        - Elements are positioned relative to the nearest positioned ancestor (not static).
+        - If no positioned ancestor is found, it is positioned relative to the initial containing block (usually the viewport).
+    4. Fixed Positioning:
+        - Elements are positioned relative to the viewport and do not move when the page is scrolled.
+        - The top, bottom, left, and right properties can be used to adjust the position.
+
+    5. Sticky Positioning:
+        - Elements are positioned based on the user's scroll position.
+        - They toggle between relative and fixed positioning depending on the scroll/threshold  position.
+
+    Z-index:
+    The z-index property in CSS is used to specify the stack order of positioned elements. Elements with a higher z-index value are displayed in front of elements with a lower z-index value.
+    -->
+
+
+    <div>
+        <h2>Static Positioning Example</h2>
+        <p style="background-color: lightblue;">This is a static positioned element. It follows the normal document
+            flow.</p>
+        <p style="background-color: lightgreen;">This is another static positioned element. It also follows the normal
+            document flow.</p>
+    </div>
+
+    <div class="relative box">
+        Relative
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="fixed box">
+        Fixed
+    </div>
+    <div class="sticky box">
+        Sticky
+    </div>
+
+
+
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+    <div class="parent">
+        <div class="absolute box">
+            Absolute
+        </div>
+    </div>
+
+    <div class="z-index-parent">
+        <h2>Z-Index Example</h2>
+        <div class="box zindex-low">Low Z-Index</div>
+        <div class="box zindex-medium">medium Z-Index</div>
+         <div class="box zindex-high">High Z-Index</div>
+    </div>
+
+
+    <p style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 51%, 0 100%); background-color: aqua ;  width: 100px;">Hello</p>
+    
+</body>
+
+</html>

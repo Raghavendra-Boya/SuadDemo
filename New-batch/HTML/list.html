@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+
+    <style>
+        ul{
+            list-style-type: disc;
+            list-style-position: outside;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!--
+    1. ordered list
+         syntax:
+            <ol type="1|A|a|I|i" start="number">
+                <li>item 1</li>
+                <li>item 2</li>
+            </ol>
+        attributes:
+        type: defines the type of the list
+        start: defines the starting number/letter of the list
+        reversed: defines the list to be in descending order
+        properites:
+            list-style-type: defines the style of the list item marker
+                values:
+                none: no marker
+                number: 1,2,3
+                upper-alpha: A,B,C
+                lower-alpha: a,b,c
+                upper-roman: I,II,III
+                lower-roman: i,ii,iii
+            list-style-position: defines the position of the list item marker
+                values:
+                inside: marker is inside the content flow
+                outside: marker is outside the content flow
+        
+2. unordered list
+        syntax:
+            <ul type="disc|circle|square">
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+
+    un-order list use cases:
+    1. when the order of items is not important
+    2. when displaying a list of items without any specific sequence
+    3. when the items are of equal importance
+
+            
+        attributes:
+        type: defines the type of the list
+            values:
+            none: no marker
+            disc: filled circle
+            circle: hollow circle
+            square: filled square
+        properites:
+            list-style-type: defines the style of the list item marker
+                values:
+                none: no marker
+                disc: filled circle
+                circle: hollow circle
+                square: filled square
+            list-style-position: defines the position of the list item marker
+                values:
+                inside: marker is inside the content flow
+                outside: marker is outside the content flow
+
+    3. Description List
+            dl: description list container
+            dt: description term
+            dd: description details
+        syntax:
+            <dl>
+                <dt>Term 1</dt>
+                <dd>Description for Term 1</dd>
+                <dt>Term 2</dt>
+                <dd>Description for Term 2</dd>
+            </dl>
+    Use cases:
+    1. when defining terms and their descriptions
+    2. when creating glossaries or dictionaries
+    3. when listing FAQs with questions and answers
+    
+    
+    -->
+    
+
+    <ol   style="list-style-type: number; list-style-position: outside;">
+        <li>Forms | Input Types
+            <ol>
+                <li>Text</li>
+                <li>Number</li>
+                <li>Email</li>
+                <li>Password</li>
+                <li>Checkbox</li>
+                <li>Radio</li>
+                <li>File</li>
+                <li>Date</li>
+                <li>Color</li>
+                <li>Range</li>
+                <li>Submit Button</li>
+                <li>Reset Button</li>
+            </ol>
+        </li>
+        <li>Core Components of HTML</li>
+        <li>Tables in HTML</li>
+        <li>Employee ID Card Design</li>
+    </ol>
+
+<ul>
+    <li>Startes
+        <ul>
+            <li>Appetizers
+                <ul style="list-style-type: square;">
+                    <li>Veg</li>
+                    <li>Non-Veg</li>
+                </ul>
+            </li>
+            <li>Main Course</li>
+        </ul>
+    </li>
+    <li>Intermediates
+        <ul>
+            <li>Salads</li>
+            <li>Soups</li>
+        </ul>
+    </li>
+    <li>Desserts
+        <ul>
+            <li>Cakes</li>
+            <li>Ice Creams</li>
+        </ul>
+    </li>
+</ul>
+
+<dl>
+    <dt>HTML</dt>
+    <dd>Hyper Text Markup Language</dd>
+    <dt>CSS</dt>
+    <dd>Cascading Style Sheets</dd>
+    <dt>JS</dt>
+    <dd>JavaScript</dd>
+</dl>
+
+
+<h3>Company</h3>
+<ul style="list-style-type: circle; margin-left: -20px;">
+    <li>About Us</li>
+    <li>Careers</li>
+    <li>Press</li>
+    <li>Blog</li>
+</ul>
+</body>
+</html>
