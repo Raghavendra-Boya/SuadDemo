@@ -1,0 +1,38 @@
+.banner{
+    height: 450px;
+    /* width: 300px; */
+    background-image: url("https://tse4.mm.bing.net/th?id=OIF.5o9r5rhBu%2bTqBsQQAf1PVg&pid=Api&P=0&h=180");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    /* width: 50%; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* background-repeat: repeat-x; */
+    background-attachment: fixed;
+    background:linear-gradient(to right, red,green,gray);
+}
+/* body{
+    background-image: url("https://picsum.photos/1200/600?random=1");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+} */
+
+.container{
+    text-align: center;
+}
+.text{
+    font-size: 90px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-image: url("https://as1.ftcdn.net/v2/jpg/04/10/31/90/1000_F_410319005_xjuIUjvwpVrRkglGHImcMpZnc43U5lss.jpg");
+    background-position: center;
+    background-size: cover;
+    color: transparent;
+    background-clip: text;
+}
