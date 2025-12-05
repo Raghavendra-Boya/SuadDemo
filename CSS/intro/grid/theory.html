@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CSS Grid — Properties Examples (Single HTML)</title>
+    <style>
+        /* Shared styles for previews and code blocks */
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+            line-height: 1.4;
+            padding: 24px;
+            background: #f6f8fa;
+            color: #0b1220
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 6px
+        }
+
+        h2 {
+            font-size: 16px;
+            margin: 18px 0 8px
+        }
+
+        .example {
+            background: #fff;
+            border: 1px solid #e3e6ea;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 3px rgba(11, 18, 32, 0.03)
+        }
+
+        .preview {
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(180deg, #fbfdff, #ffffff)
+        }
+
+        .code {
+            background: #0b1220;
+            color: #e6eef6;
+            padding: 12px;
+            border-radius: 6px;
+            overflow: auto;
+            font-family: Consolas, monaco, monospace;
+            font-size: 13px
+        }
+
+        /* base grid markup used in every example */
+        .grid-base {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px
+        }
+
+        .box {
+            background: #cfe8ff;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700
+        }
+
+        .box.small {
+            padding: 10px
+        }
+
+        /* 1. display: grid / inline-grid */
+        .example-display .grid {
+            display: grid
+        }
+
+        .example-inline .grid {
+            display: inline-grid
+        }
+
+        /* 2. grid-template-columns / grid-template-rows */
+        .example-template .grid {
+            display: grid;
+            grid-template-columns: 100px 2fr 1fr;
+            grid-template-rows: 80px 200px
+        }
+
+        /* 3. gap / row-gap / column-gap */
+        .example-gap .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .example-gap-rows .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 30px
+        }
+
+        .example-gap-cols .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 30px
+        }
+
+        /* 4. justify-content (horizontal alignment of grid) */
+        .example-justify-center .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            gap: 10px;
+            justify-content: center
+        }
+
+        .example-justify-start .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            justify-content: start
+        }
+
+        .example-justify-space .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            justify-content: space-between
+        }
+
+        /* 5. align-content (vertical alignment of grid) */
+        .example-aligncontent .wrap {
+            height: 260px;
+            background: #fff;
+            padding: 12px
+        }
+
+        .example-aligncontent .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 140px);
+            grid-auto-rows: 60px;
+            align-content: center;
+            gap: 10px;
+            height: 100%
+        }
+
+        /* 6. justify-items / align-items (item alignment inside each cell) */
+        .example-justifyitems .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 140px);
+            grid-auto-rows: 80px;
+            justify-items: center
+        }
+
+        .example-alignitems .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 140px);
+            grid-auto-rows: 80px;
+            align-items: end
+        }
+
+        /* 7. place-items (shorthand) */
+        .example-placeitems .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 140px);
+            grid-auto-rows: 80px;
+            place-items: center
+        }
+
+        /* 8. place-content (shorthand) */
+        .example-placecontent .wrap {
+            height: 260px
+        }
+
+        .example-placecontent .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            grid-auto-rows: 60px;
+            place-content: center;
+            gap: 8px;
+            height: 100%
+        }
+
+        /* 9. Grid item properties: longhand start/end */
+        .example-item-long .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 80px;
+            gap: 10px
+        }
+
+        .example-item-long .item-a {
+            background: #ffd7d7;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            /* grid-row-start: 1;
+            grid-row-end: 2 */
+        }
+
+        /* 10. Shorthands for grid items */
+        .example-item-short .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 80px;
+            gap: 10px
+        }
+
+        .example-item-short .item-a {
+            background: #ffd7d7;
+            grid-column: 1 / 3;
+            /* grid-row: 1 / span 1 */
+        }
+
+        .example-item-short .item-b {
+            background: #ffe9c9;
+            grid-column: 3 / span 2;
+            grid-row: 1 / 3
+        }
+
+        /* small helpers for labels */
+        .lbl {
+            font-size: 12px;
+            color: #334155;
+            margin-top: 6px
+        }
+
+        pre.code-snippet {
+            white-space: pre-wrap;
+            margin: 10px 0
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Grid — Live examples (single HTML)</h1>
+    <p>Each example below re-uses the same simple HTML boxes. The CSS for that example is shown in the code block above
+        the preview.</p>
+
+    <!-- Example 1: display grid vs inline-grid -->
+    <section class="example example-display">
+        <h2>1. <code>display: grid</code> (turns container into grid)</h2>
+        <div class="code">/* .example-display .grid { display: grid; } */</div>
+        <div class="preview">
+            <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:10px">
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="example example-inline">
+        <h2>1b. <code>display: inline-grid</code> (grid but behaves like inline element)</h2>
+        <div class="code">/* .example-inline .grid { display: inline-grid; } */</div>
+        <div class="preview">
+            <p>Text before — <span style="display:inline-block;vertical-align:middle">
+                    <div class="grid" style="display:inline-grid;grid-template-columns:repeat(3,80px);gap:8px">
+                        <div class="box small">1</div>
+                        <div class="box small">2</div>
+                        <div class="box small">3</div>
+                    </div>
+                </span> — Text after</p>
+        </div>
+    </section>
+
+    <!-- Example 2: grid-template-columns / rows -->
+    <section class="example example-template">
+        <h2>2. <code>grid-template-columns</code> / <code>grid-template-rows</code></h2>
+        <div class="code">.grid { grid-template-columns: 100px 2fr 1fr; grid-template-rows: 80px 100px; }</div>
+        <div class="preview">
+            <div class="grid" style="">
+                <div class="box">1</div>
+                <div class="box">2 (2fr)</div>
+                <div class="box">3 (1fr)</div>
+                <div class="box">4 (row2)</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 3: gap / row-gap / column-gap -->
+    <section class="example example-gap">
+        <h2>3. <code>gap</code> / <code>row-gap</code> / <code>column-gap</code></h2>
+        <div class="code">/* gap: 20px creates equal spacing between rows and columns */
+            .grid { gap: 20px }
+            .row-only { row-gap: 30px }
+            .col-only { column-gap: 30px }</div>
+        <div class="preview">
+            <div class="grid" style="">
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+                <div class="box">D</div>
+                <div class="box">E</div>
+                <div class="box">F</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 4: justify-content -->
+    <section class="example example-justify-center">
+        <h2>4. <code>justify-content</code> (align grid as a whole horizontally)</h2>
+        <div class="code">.grid { grid-template-columns: repeat(3,120px); justify-content: center; }</div>
+        <div class="preview">
+            <div class="grid">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="example example-justify-space">
+        <h2>4b. <code>justify-content: space-between</code></h2>
+        <div class="code">.grid { justify-content: space-between; }</div>
+        <div class="preview">
+            <div class="grid" style="grid-template-columns:repeat(3,120px);justify-content:space-between;">
+                <div class="box">L</div>
+                <div class="box">M</div>
+                <div class="box">R</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 5: align-content -->
+    <section class="example example-aligncontent">
+        <h2>5. <code>align-content</code> (align grid as a whole vertically inside a taller container)</h2>
+        <div class="code">.grid { grid-auto-rows:60px; align-content: center; }</div>
+        <div class="preview wrap">
+            <div class="grid">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 6: justify-items / align-items -->
+    <section class="example example-justifyitems">
+        <h2>6. <code>justify-items</code> (align item inside its cell horizontally)</h2>
+        <div class="code">.grid { justify-items: center; }</div>
+        <div class="preview">
+            <div class="grid" style="grid-auto-rows:80px;">
+                <div class="box" style="justify-self:start">start</div>
+                <div class="box">center</div>
+                <div class="box" style="justify-self:end">end</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="example example-alignitems">
+        <h2>6b. <code>align-items</code> (align item inside its cell vertically)</h2>
+        <div class="code">.grid { align-items: end; }</div>
+        <div class="preview">
+            <div class="grid" style="grid-auto-rows:110px;">
+                <div class="box">top</div>
+                <div class="box">middle</div>
+                <div class="box">bottom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 7: place-items shorthand -->
+    <section class="example example-placeitems">
+        <h2>7. <code>place-items</code> (shorthand for align-items + justify-items)</h2>
+        <div class="code">.grid { place-items: center; /* centers items in both axes */ }</div>
+        <div class="preview">
+            <div class="grid" style="grid-auto-rows:80px;">
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 8: place-content shorthand -->
+    <section class="example example-placecontent">
+        <h2>8. <code>place-content</code> (shorthand for align-content + justify-content)</h2>
+        <div class="code">.grid { place-content: center; }</div>
+        <div class="preview wrap">
+            <div class="grid">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+                <div class="box">5</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 9: Grid Item Properties (longhand) -->
+    <section class="example example-item-long">
+        <h2>9. Grid item longhand properties (<code>grid-column-start</code>, <code>grid-column-end</code>,
+            <code>grid-row-start</code>, <code>grid-row-end</code>)</h2>
+        <div class="code">.item-a { grid-column-start:1; grid-column-end:3; grid-row-start:1; grid-row-end:2; }</div>
+        <div class="preview">
+            <div class="grid">
+                <div class="box item-a">A (col 1 → 3)</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+                <div class="box">D</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 10: Shorthands for Grid Items -->
+    <section class="example example-item-short">
+        <h2>10. Shorthands (<code>grid-column</code>, <code>grid-row</code>, <code>grid-area</code>)</h2>
+        <div class="code">.item-a { grid-column: 1 / 3; grid-row: 1 / span 1 }
+            .item-b { grid-column: 3 / span 2; grid-row: 1 / 3 }</div>
+        <div class="preview">
+            <div class="grid">
+                <div class="box item-a">A (1 / 3)</div>
+                <div class="box">B</div>
+                <div class="box item-b">C (3 / span 2)</div>
+                <div class="box">D</div>
+            </div>
+        </div>
+    </section>
+
+    <p style="font-size:13px;color:#334155">Tip: use the small code snippets shown above during the live demo and ask
+        students to toggle values (e.g., change <code>justify-content</code> from <code>center</code> to
+        <code>space-between</code>) to see live differences.</p>
+
+</body>
+
+</html>

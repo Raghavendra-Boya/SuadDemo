@@ -1,0 +1,14 @@
+.box{
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    /* gap: 50px; */
+    row-gap: 50px;
+    
+
+    /* grid-template-rows: 100px 200px 300px; */
+}
