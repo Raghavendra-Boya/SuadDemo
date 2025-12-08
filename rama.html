@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random Trainer Assignment</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        .result {
-            font-size: 18px;
-            background: #f2f2f2;
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Greet Users - this Keyword Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-    <h2>Random Exam Trainer Assignment</h2>
+<body class="bg-gray-100 p-6">
 
-    <button onclick="assignTrainers()">Generate Random Assignment</button>
+    <h2 class="text-2xl font-bold mb-4">Users - Greet Example (this keyword)</h2>
 
-    <div id="output" class="result"></div>
+    <div id="userBox" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
 
-    <script>
-        function assignTrainers() {
-            let students = ["Jyothi", "Mahitha", "Jeevan", "Mani"];
-            let trainers = ["Raghava", "JP", "Vamsi", "Hariees"];
+    <h3 id="message" class="text-xl font-semibold text-blue-600 mt-6"></h3>
 
-            // Shuffle trainers using Fisher-Yates method
-            for (let i = trainers.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [trainers[i], trainers[j]] = [trainers[j], trainers[i]];
-            }
+<script>
+// --------------------------------------------------
+// 1️⃣ Users Data
+// --------------------------------------------------
+let users = [
+    { name: "Raghavendra", age: 26 },
+    { name: "Mahitha", age: 22 },
+    { name: "Jyothi", age: 28 },
+    { name: "Rahul", age: 24 }
+];
 
-            let output = "";
-            for (let i = 0; i < students.length; i++) {
-                output += `${students[i]} → ${trainers[i]}<br>`;
-            }
+// --------------------------------------------------
+// 2️⃣ Create Cards using for loop
+// --------------------------------------------------
+let container = document.getElementById("userBox");
 
-            document.getElementById("output").innerHTML = output;
-        }
-    </script>
+for (let i = 0; i < users.length; i++) {
+
+    let card = document.createElement("div");
+    card.className =
+        "bg-white shadow-md rounded-lg p-4 text-center border border-gray-200";
+
+    card.innerHTML = `
+        <h3 class="text-xl font-bold">${users[i].name}</h3>
+        <p class="text-gray-600">Age: ${users[i].age}</p>
+
+        <button 
+            class="greetBtn mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            data-name="${users[i].name}">
+            Greet User
+        </button>
+    `;
+
+    // --------------------------------------------------
+    // 3️⃣ Event Listener — using this + data attribute
+    // --------------------------------------------------
+    card.querySelector(".greetBtn").addEventListener("click", function () {
+
+        console.log("Greet button clicked → this =", this);
+
+        // ⭐ Get user name WITHOUT parentNode
+
+        //👉 You can add your own custom data to any HTML element
+        // 👉 But custom attributes must start with data-
+        let userName = this.getAttribute("data-name");
+
+        // Show message
+        // document.getElementById("message").innerText =
+        //     "Hello " + userName + "! 👋";
+
+        alert("Hello" + userName)
+    });
+
+    container.appendChild(card);
+}
+
+</script>
 
 </body>
 </html>

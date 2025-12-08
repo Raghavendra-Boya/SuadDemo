@@ -1,0 +1,75 @@
+.box {
+    width: 150px;
+
+    height: 50px;
+    background-color: aqua;
+    transition-duration: transform 3s;
+    /* transition-delay: 2s; */
+    transition-timing-function: ease-in-out;
+}
+
+.box:hover{
+    /* transform: scale(2); */
+    /* transform: rotateY(90deg); */
+    /* transform: translateY(100px); */
+    /* transform: skewY(45deg); */
+    /* transform: translateX(200px) scale(1.5) rotate(75deg); */
+}
+.hidden-box{
+    opacity: 0;
+    /* visibility: hidden; */
+    background-color: red;
+     /* transition-duration: 2s; */
+     transform: translate(0px);
+     transition-duration: 3s;
+}
+
+.box:hover .hidden-box{
+    /* display: block;
+     */
+     opacity: 1;
+    transform: translateY(-50px);
+   
+}
+
+/* Outer Card */
+.outer-card {
+  width: 300px;  /* Set width of the outer card */
+  height: 100px; /* Set initial height */
+  overflow: hidden;  /* Hide overflow */
+  position: relative;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: height 0.3s ease;
+}
+
+/* Outer Card */
+.outer-card {
+  width: 300px;   /* Set width of the outer card */
+  height: 100px;  /* Set initial height of outer card */
+  position: relative; /* Positioning context for inner card */
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Hide overflow of inner card when it's not expanded */
+}
+
+/* Inner Card (second card) */
+.inner-card {
+  position: absolute;
+  bottom: 0;  /* Start at the bottom of the outer card */
+  width: 100%;  /* Fill the outer card horizontally */
+  height: 100px; /* Initially 100px */
+  overflow-y: hidden;  /* Hide vertical overflow initially */
+  background-color: #c0c0c0;
+  padding: 10px;
+  transition: height 0.3s ease, overflow-y 0.3s ease;
+}
+
+/* Hover effect */
+.outer-card:hover .inner-card {
+  height: 200px;  /* When hovered, the inner card grows to 200px */
+  overflow-y: auto;  /* Enable scroll when expanded */
+}
+
