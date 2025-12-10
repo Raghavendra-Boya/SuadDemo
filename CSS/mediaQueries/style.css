@@ -1,0 +1,86 @@
+.box{
+    width  : 200px;
+    height: 150px;
+    background-color: aqua;
+}
+
+@media (max-width:1239px) and (min-width:768px){
+    .box{
+        background-color: red;
+    }
+}
+
+@media (max-width:767px) and (min-width:480px){
+    .box{
+        background-color: green;
+    }
+}
+
+ .header{
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .headerlogo{
+            width: 20%;
+        }
+        .headerlogo img{
+            width: 100%;
+        }
+        .navlinks{
+            display: flex;
+            justify-content: space-evenly;
+            width: 80%;
+        }
+
+        @media (max-width:480px){
+            .header{
+                flex-direction: column;
+            }
+            .navlinks{
+                flex-direction: column;
+                text-align: center;
+                
+
+            }
+            .headerlogo{
+                width: 50%;
+            }
+        }
+
+
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container{
+            /* width: 100%; */
+            flex: 1 1 30%;
+            margin: 10px;
+        }
+        .men-womenfashion{
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+        .anchor{
+            display: flex;
+            justify-content: space-around;
+        }
+        .image img{
+            width: 100%;
+            /* height: 100px; */
+        }
+
+         @media (min-width:768px) and (max-width:1023px){
+            .container{
+                flex: 1 1 45%;
+
+        }
+    } 
+        @media (max-width:767px) {
+            .container{
+                flex: 1 1 90%;
+            }
+        }
